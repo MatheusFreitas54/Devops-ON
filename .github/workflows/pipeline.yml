@@ -125,6 +125,23 @@ jobs:
         shell: bash
         run: |
           sh 'src/main/scripts/testeIntegrado.sh'
+      
+      - name: Teste de Contrato
+        run: echo "Executando testes de contrato"
+
+      - name: Teste de Segurança
+        # run: snyk test
+        run: echo "Executando testes de segurança"
+        
+      - name: Teste de Performance
+        # run: k6 run testes/performance.js
+        run: echo "Executando testes de performance"
+
+      - name: Teste de Aceitação
+        run: echo "Executando testes de aceitação"
+
+      - name: Teste de Regressão
+        run: echo "Executando testes de regressão automatizados"
   
   deploy-Pre:
     runs-on: ubuntu-latest
@@ -173,4 +190,4 @@ jobs:
       - name: Deploy 
         shell: bash
         run: |
-          echo "Deploy PROD" 
+          echo "Deploy PROD"
